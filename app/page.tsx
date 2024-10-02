@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "./components/header";
 import BackGroundImage from "@/public/assets/images/02.jpg";
+import BottomNav from "./components/mobile-nav";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         />
       </div>
       <Header />
+      <BottomNav />
     </div>
   );
 }
