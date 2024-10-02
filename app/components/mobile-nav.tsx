@@ -1,8 +1,8 @@
 import Link from "next/link";
-// import "./bottomnav.css";
+import { useBrowserWidth } from "../constant/Width";
 
 const BottomNav = () => {
-  const width = 820;
+  const width = useBrowserWidth();
   return (
     <div className="bg-white/40 absolute bottom-4 left-1/2 transform -translate-x-1/2 w-72 h-15 rounded-xl flex items-center justify-between px-4 py-9">
       {width < 820 && (

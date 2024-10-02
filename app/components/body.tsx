@@ -1,29 +1,25 @@
+"use client";
 import Image from "next/image";
-import BackGroundImage from "@/public/assets/images/01.jpg";
+import Header from "./header";
+import BottomNav from "./mobile-nav";
+import BackGroundImage from "@/public/assets/images/02.jpg";
+import { useBrowserHeight } from "../constant/Height";
 
 export default function Body() {
+  const height = useBrowserHeight();
   return (
     <div
-      className="hero__container"
-      //   style={{ height: height, overflow: "hidden" }}
+      className={`full relative overflow-hidden flex flex-col justify-center h-screen ${height}`}
     >
-      <div className="bg__img">
-        <Image src={BackGroundImage} alt="background" />
-      </div>
-      {/* <Header /> */}
-
-      <div className="madewith">
-        <p>Made with react</p>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
-          alt=""
-          width={20}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={BackGroundImage}
+          alt="background"
+          className="w-full h-full object-cover"
         />
       </div>
-      {/* <Weather /> */}
-      {/* <MobileView /> */}
-
-      {/* <BottomNav notify={notify} handleClose={handleClose} /> */}
+      <Header />
+      <BottomNav />
     </div>
   );
 }
