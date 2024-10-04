@@ -3,12 +3,17 @@ import Image from "next/image";
 import Header from "./header";
 import BottomNav from "./mobile-nav";
 import BackGroundImage from "@/public/assets/images/02.jpg";
-// import { useBrowserHeight } from "../constant/Height";
+import { useEffect, useState } from "react";
 
 export default function Body() {
-  // const height = useBrowserHeight();
+  const [height, setHeight] = useState<number>();
+  useEffect(() => {
+    setHeight(window.innerHeight);
+  }, []);
+  const appheight = height;
+  console.log(appheight);
   return (
-    <div className="h-screen">
+    <div style={{ height: appheight }}>
       <div
         className={`full relative overflow-hidden flex flex-col justify-center h-full`}
       >
