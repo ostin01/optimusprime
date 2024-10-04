@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { useBrowserWidth } from "../constant/Width";
 
 const BottomNav = () => {
-  const width = useBrowserWidth();
   return (
     <div className="bg-white/40 absolute bottom-4 left-1/2 transform -translate-x-1/2 w-72 h-15 rounded-xl flex items-center justify-between px-4 py-9">
-      {width < 820 && (
+      {/* {width < 820 && (
         <a href="tel:+234 8136080403">
           <div className="w-[50px] h-[50px]">
             <img
@@ -15,7 +13,7 @@ const BottomNav = () => {
             />
           </div>
         </a>
-      )}
+      )} */}
 
       <a href="mailto:austinpaul606@gmail.com?subject=Hello from my portfolio">
         <div className="w-[50px] h-[50px]">
@@ -63,7 +61,7 @@ const BottomNav = () => {
           />
         </div>
       </Link>
-      {width >= 820 && (
+      {/* {width >= 820 && (
         <>
           <a
             href="https://github.com/Fitzstiles"
@@ -94,7 +92,7 @@ const BottomNav = () => {
             </div>
           </Link>
         </>
-      )}
+      )} */}
     </div>
   );
 };
