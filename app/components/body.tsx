@@ -4,8 +4,16 @@ import Header from "./header";
 import BottomNav from "./mobile-nav";
 import BackGroundImage from "@/public/assets/images/02.jpg";
 import { useEffect, useState } from "react";
+import Weather from "./weather";
+import { WeatherResponse } from "../schema/port";
 
-export default function Body() {
+export default function Body({
+  weather,
+  weatherIcon,
+}: {
+  weather: WeatherResponse;
+  weatherIcon: string;
+}) {
   const [height, setHeight] = useState<number>();
   const [width, setWidth] = useState<number>(600);
   useEffect(() => {
@@ -15,7 +23,7 @@ export default function Body() {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Call it initially to set the size
+    handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -41,6 +49,7 @@ export default function Body() {
           )}
         </div>
         <Header />
+        <Weather weather={weather} weatherIcon={weatherIcon} />
         <BottomNav />
       </div>
     </div>
