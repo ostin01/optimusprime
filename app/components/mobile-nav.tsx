@@ -2,12 +2,19 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const BottomNav = () => {
-  const [width, setwidth] = useState<number>(820);
+  const [width, setWidth] = useState<number>(820);
   useEffect(() => {
-    setwidth(window.innerWidth);
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call it initially to set the size
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="bg-white/40 absolute bottom-4 left-1/2 transform -translate-x-1/2 max-w-[900px] h-[60px] rounded-[20px] flex items-center justify-between px-[15px] py-[35px] md:gap-[10px]">
+    <div className="bg-white/40 absolute bottom-4 left-1/2 transform -translate-x-1/2 max-w-[900px] h-[60px] rounded-[20px] flex items-center justify-between px-[15px] py-[35px] gap-[10px]">
       {width < 820 && (
         <a href="tel:+234 8136080403">
           <div className="w-[50px] h-[50px]">
