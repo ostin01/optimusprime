@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const BottomNav = () => {
+  const [width, setwidth] = useState<number>(820);
+  useEffect(() => {
+    setwidth(window.innerWidth);
+  }, []);
   return (
-    <div className="bg-white/40 absolute bottom-4 left-1/2 transform -translate-x-1/2 w-72 h-15 rounded-xl flex items-center justify-between px-4 py-9">
-      {/* {width < 820 && (
+    <div className="bg-white/40 absolute bottom-4 left-1/2 transform -translate-x-1/2 max-w-[900px] h-[60px] rounded-[20px] flex items-center justify-between px-[15px] py-[35px] md:gap-[10px]">
+      {width < 820 && (
         <a href="tel:+234 8136080403">
           <div className="w-[50px] h-[50px]">
             <img
@@ -13,66 +18,53 @@ const BottomNav = () => {
             />
           </div>
         </a>
-      )} */}
+      )}
 
       <a href="mailto:austinpaul606@gmail.com?subject=Hello from my portfolio">
         <div className="w-[50px] h-[50px]">
           <img
             src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Mail-512.png"
             alt=""
+            className="w-full h-full"
           />
         </div>
       </a>
 
       <Link href="/messages">
-        <div
-          className="w-[50px] h-[50px]"
-          style={{ position: "relative" }}
-          //   onClick={handleClose}
-        >
+        <div className="w-[50px] h-[50px] relative">
           <img
             src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Messages-512.png"
             alt=""
+            className="w-full h-full"
           />
           {/* {notify && (
             <div
-              style={{
-                position: "absolute",
-                backgroundColor: "red",
-                top: -5,
-                right: 0,
-                width: 20,
-                height: 20,
-                borderRadius: "50%",
-                textAlign: "center",
-              }}
+              className="absolute bg-red-500 top-[-5px] right-0 w-[20px] h-[20px] rounded-full flex items-center justify-center"
             >
-              <p>1</p>
+              <p className="text-white">1</p>
             </div>
           )} */}
         </div>
       </Link>
 
       <Link href="/about">
-        <div className="w-[50px] h-[50px] ">
+        <div className="w-[50px] h-[50px]">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Contacts_%28iOS%29.png"
             alt=""
+            className="w-full h-full"
           />
         </div>
       </Link>
-      {/* {width >= 820 && (
+
+      {width >= 820 && (
         <>
-          <a
-            href="https://github.com/Fitzstiles"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/ostin01" target="_blank" rel="noreferrer">
             <div className="w-[50px] h-[50px]">
               <img
                 src="https://upcdn.io/FW25bBB/image/content/app_logos/e71493b6-3fb2-4532-b850-bc45b937142c.webp?f=webp&w=1920&q=85&fit=shrink-cover"
-                style={{ borderRadius: 15 }}
                 alt=""
+                className="w-full h-full rounded-[15px]"
               />
             </div>
           </a>
@@ -80,6 +72,7 @@ const BottomNav = () => {
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Adobe_Acrobat_DC_logo_2020.svg/1200px-Adobe_Acrobat_DC_logo_2020.svg.png"
               alt=""
+              className="w-full h-full"
             />
           </div>
 
@@ -88,11 +81,12 @@ const BottomNav = () => {
               <img
                 src="https://www.apple.com/v/app-store/b/images/overview/icon_appstore__ev0z770zyxoy_large_2x.png"
                 alt=""
+                className="w-full h-full"
               />
             </div>
           </Link>
         </>
-      )} */}
+      )}
     </div>
   );
 };
