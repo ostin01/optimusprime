@@ -6,6 +6,7 @@ import BackGroundImage from "@/public/assets/images/02.jpg";
 import { useEffect, useState } from "react";
 import Weather from "./weather";
 import { WeatherResponse } from "../schema/port";
+import MobileView from "./mobile-view";
 
 export default function Body({
   weather,
@@ -50,6 +51,8 @@ export default function Body({
         </div>
         <Header />
         <Weather weather={weather} weatherIcon={weatherIcon} />
+
+        <MobileView />
         <BottomNav />
       </div>
     </div>
