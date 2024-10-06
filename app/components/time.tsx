@@ -5,7 +5,7 @@ export default function Time() {
   const minutes = t.getMinutes();
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
   return (
-    <p className="text-xs font-medium">
+    <p className="md:text-xs font-bold md:font-medium">
       {formattedHours}:{formattedMinutes}
     </p>
   );

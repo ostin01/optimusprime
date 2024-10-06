@@ -6,7 +6,7 @@ import { day, dayInWords, month } from "@/app/constant/DateTime";
 export default function Header() {
   return (
     <div className="absolute top-0 w-full text-white">
-      <div className="md:hidden ">
+      <div className="w-[85%] mt-[10px] mx-auto md:hidden ">
         <Time />
       </div>
       <div className="hidden bg-black/40 backdrop-blur-lg p-1 md:flex   justify-between">
