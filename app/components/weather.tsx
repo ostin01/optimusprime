@@ -12,7 +12,7 @@ export default function weather({
     <div className="absolute top-[50px] left-0 right-0 flex justify-between max-w-[90%] mx-auto md:hidden">
       <div className="flex flex-col justify-center w-[150px] relative overflow-hidden text-white">
         <div className="bg-gradient-to-b from-black to-gray-700 h-[150px] w-[150px] rounded-[20px] text-[12px] p-[10px]">
-          {weather ? (
+          {weather && (
             <div>
               <h2 className="text-[18px]">{weather.name}</h2>
               <p className="text-[40px] font-light">
@@ -28,8 +28,6 @@ export default function weather({
                 <p>L:{Math.floor(weather?.main?.temp_min - 273.15)}°</p>
               </div>
             </div>
-          ) : (
-            <p>Loading...</p>
           )}
         </div>
         <p className="mt-[5px] text-[12px] text-center">Weather</p>

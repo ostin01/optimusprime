@@ -13,7 +13,7 @@ export default function Header() {
         {/* the first part */}
         <div className="flex items-center gap-5 text-xs font-medium">
           <Apple size="16" color="white" variant="Bold" />
-          <Link href="/about">About me</Link>
+          <Link href="/profile">About me</Link>
           <Link href="/about">Project</Link>
           <Link href="/about">Resume</Link>
           <a href="mailto:austinpaul606@gmail.com?subject=Hello from my portfolio">
